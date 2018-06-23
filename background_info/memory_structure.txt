@@ -1,0 +1,12 @@
+End address : (2^32)-1 for x86, (2^64)-1 for x64
+
+  Stack : Downward memory usage for static allocation
+
+
+  Heap : Upward memory usage for dynamic allocation
+
+  Data Section : initialized by system
+
+  Code Section
+
+Start address : 0

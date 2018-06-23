@@ -1,0 +1,2 @@
+lea A B : put offset address of B into A(load effective address)
+
