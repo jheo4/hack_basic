@@ -29,3 +29,5 @@ gdb -OPTIONS a.out
   #0  __strcpy_sse2_unaligned () at ../sysdeps/x86_64/multiarch/strcpy-sse2-unaligned.S:47
   #1  0x00000000004005fe in main () at ext_func_proc.c:6
 
+(gdb) layout split : gdb screen split
+(gdb) layout next : next split arrangement

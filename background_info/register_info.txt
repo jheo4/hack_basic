@@ -4,8 +4,8 @@ rbx : base
 rcx : counter
 rdx : data
 
-rsp : stack pointer
-rbp : base pointer
+rsp : current stack pointer
+rbp : base pointer for current stack frame
 rsi : source index
 rdi : destination index
 rip : instruction pointer

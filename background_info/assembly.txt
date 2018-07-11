@@ -1,2 +1,2 @@
 lea A B : put offset address of B into A(load effective address)
-
+movabs A B : move absolute data, 64bit constant or data from address -> register
