@@ -1,3 +1,7 @@
+ax -> 16bits
+eax -> 32bits
+rax -> 64bits
+
 # x86-64 processor
 rax : accumulator
 rbx : base

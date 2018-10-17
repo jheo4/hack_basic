@@ -1,3 +1,5 @@
+.out to .asm : objdump -S --disassmeble input.out > output.asm
+
 gdb -OPTIONS a.out
 
 (gdb) help command : show the description for the command
@@ -31,3 +33,5 @@ gdb -OPTIONS a.out
 
 (gdb) layout split : gdb screen split
 (gdb) layout next : next split arrangement
+(gdb) tui disable : gdb split off
+(gdb) tui enable : gdb split on
