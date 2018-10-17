@@ -1,4 +1,6 @@
-.out to .asm : objdump -S --disassmeble input.out > output.asm
+# pre-requisite
+  .out to .asm : objdump -S --disassmeble input.out > output.asm
+  gcc -g
 
 gdb -OPTIONS a.out
 
@@ -28,6 +30,7 @@ gdb -OPTIONS a.out
     - g : giant(8byte)
 
 (gdb) bt : breaktrace the stack frames
+(gdb) bt full : local variables by the context of each stack frame
   #0  __strcpy_sse2_unaligned () at ../sysdeps/x86_64/multiarch/strcpy-sse2-unaligned.S:47
   #1  0x00000000004005fe in main () at ext_func_proc.c:6
 
