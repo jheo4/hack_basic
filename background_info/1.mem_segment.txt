@@ -1,0 +1,38 @@
+# Memory Segment
+
+Compiled program's memory consists of five segments
+ - text : assembly code segment shared by program instances. EIP points the this segment. The revision of this segment is not allowed. The size of this memory segment is fixed.
+ - data : initialized global variables and static variables are saved. The size of this memory segment is fixed.
+ - bss(block started symbol) : uninitialized global variables and static variables are saved. The size of this memory segment is fixed.
+ - heap : programmers can access this mem segment and dynamically allocate/deallocate memory. The size of this memeory segment is flexible.
+ - stack : locall function variables and temporary contexts of function calls are saved. The context includes the return address for EIP and SFP(saved frame pointer) for EBP after execution of the function. The context is saved as stack frame. The size of this memory segment is flexible. ESP regiester points the top of the stack. EBP register points the base of the stack and is used for referring local variables.
+
+Low addr ----------------------
+         | Text Segment       |
+         |--------------------|
+         | Data Segment       |
+         |--------------------|
+         | Heap Segment   ↓   |
+         |                    |
+         |                    |
+         |                    |
+         | Stack Segment  ↑   |
+         ----------------------
+
+## Stack
+### Procedure Prologue
+Procedure prologue save the frame pointers and stack memories for local function variables. Therefore, this is the procedure for making stack frame. When a new stack frame is created, the EBP value is pushed for restoration and ESP value is copied into EBP for pointing the new stack frame.
+
+Example)
+RBP : 0x00007fffffffda60    RSP : 0x00007fffffffda30
+0x7fffffffda30: 0x00000004      0x00000003      0x00000002      0x00000001
+0x7fffffffda40: 0xf7de59a0      0x00007fff      0x00000000      0x00000000
+0x7fffffffda50: 0x555546e0      0x00005555      0x55554560      0x00005555
+0x7fffffffda60: 0xffffda70      0x00007fff      0x555546cc      0x00005555
+
+0x7fffffffda60 : 0x00007fffffffda70 // previous RBP value
+0x7fffffffda58 : 0x00005555555546cc // return address for RIP
+0x7fffffffda48 : 0x00000000 // for variable i
+0x7fffffffda4e~58 : 0x00000000 0x00000000 0x555546e0 0x00005555 : char array[10]
+0x7fffffffda30~3f : input params (int * 4)
+
