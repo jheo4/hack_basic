@@ -1,3 +1,7 @@
+/* Author : Jin Heo         */
+/* Date : 2018-10-18        */
+/* email : 993jin@gmail.com */
+
 void test_function(int a, int b, int c, int d){
   int flag;
   char buffer[10];
