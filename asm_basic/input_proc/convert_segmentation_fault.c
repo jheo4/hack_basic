@@ -1,3 +1,7 @@
+/* Author : Jin Heo         */
+/* Date : 2018-10-12        */
+/* email : 993jin@gmail.com */
+
 #include<stdio.h>
 #include<stdlib.h>
 

@@ -1,3 +1,8 @@
+/* Author : Jin Heo         */
+/* Date : 2018-09-19        */
+/* email : 993jin@gmail.com */
+
+
 #include <stdio.h>
 
 int main(){

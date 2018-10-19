@@ -1,5 +1,5 @@
 # pre-requisite
-  .out to .asm : objdump -S --disassmeble input.out > output.asm
+  .out to .asm : objdump -S --disassmeble -M intel input.out > output.asm
   gcc -g
 
 gdb -OPTIONS a.out
